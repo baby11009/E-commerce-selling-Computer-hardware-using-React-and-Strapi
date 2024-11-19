@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notification_states",
+  "info": {
+    "singularName": "notification-state",
+    "pluralName": "notification-states",
+    "displayName": "NotificationState",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "State": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notificantion.notificantion",
+      "mappedBy": "notification_state"
+    }
+  }
+}

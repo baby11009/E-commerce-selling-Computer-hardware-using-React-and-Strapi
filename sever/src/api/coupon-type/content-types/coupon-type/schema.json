@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupon_types",
+  "info": {
+    "singularName": "coupon-type",
+    "pluralName": "coupon-types",
+    "displayName": "CouponType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string",
+      "required": true
+    },
+    "coupons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::coupon.coupon",
+      "mappedBy": "coupon_type"
+    }
+  }
+}

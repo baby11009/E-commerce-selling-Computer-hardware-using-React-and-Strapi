@@ -1,0 +1,111 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Price": {
+      "type": "float"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Rate": {
+      "type": "float",
+      "max": 5,
+      "min": 0,
+      "default": 5
+    },
+    "MainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "Products"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "gifts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gift.gift",
+      "mappedBy": "products"
+    },
+    "sale": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sale.sale",
+      "inversedBy": "products"
+    },
+    "Review_5": {
+      "type": "integer",
+      "default": 0
+    },
+    "technical": {
+      "type": "json"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "product"
+    },
+    "Review_4": {
+      "type": "integer",
+      "default": 0
+    },
+    "Review_3": {
+      "type": "integer",
+      "default": 0
+    },
+    "Review_2": {
+      "default": 0,
+      "type": "integer"
+    },
+    "Review_1": {
+      "default": 0,
+      "type": "integer"
+    },
+    "Quantity": {
+      "type": "integer",
+      "default": 10,
+      "required": true
+    }
+  }
+}

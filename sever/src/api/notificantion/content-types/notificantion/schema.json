@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notificantions",
+  "info": {
+    "singularName": "notificantion",
+    "pluralName": "notificantions",
+    "displayName": "Notification",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "notificantions"
+    },
+    "Message": {
+      "type": "string"
+    },
+    "notification_state": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::notification-state.notification-state",
+      "inversedBy": "notifications"
+    },
+    "notification_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::notification-type.notification-type",
+      "inversedBy": "notifications"
+    }
+  }
+}

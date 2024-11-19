@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
+.triangle1 {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 36%, 0% 100%, 48.5% 100%);
+  position: absolute;
+  background-color: blue;
+}
+.triangle2 {
+  width: 100%;
+  height: 100%; /* Độ cao của hình tứ giác */
+  clip-path: polygon(50% 100%, 27.5% 0, 72.5% 0);
+  position: absolute;
+  background-color: blue;
+}
+.triangle3 {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 36%, 100% 100%, 51.5% 100%);
+  position: absolute;
+  background-color: blue;
+}
+.quadrilateral1 {
+  width: 100%;
+  height: 100%; /* Độ cao của hình tứ giác */
+  clip-path: polygon(0 0, 27% 0, 49.5% 100%, 49.5% 100%, 0 34%);
+  position: absolute;
+  background-color: blue;
+}
+
+.quadrilateral2 {
+  width: 100%;
+  height: 100%; /* Độ cao của hình tứ giác */
+  clip-path: polygon(100% 0, 100% 34%, 50.5% 100%, 50.5% 100%, 73% 0%);
+  position: absolute;
+  background-color: blue;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+
+.gradient2 {
+  background-image: linear-gradient(
+    to right top,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #79b3f4,
+    #41dfff,
+    #46eefa
+  );
+}
+
+.shake {
+  animation: shake 0.2s 2;
+  border: 2px solid #ff006e;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+    scale: 1.1;
+  }
+  25%,
+  75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* input range custome */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+/* radio custome */
+.container:hover input ~ .checkmark {
+  background-color: #dcdada;
+}
+
+/* Skeleton animation */
+
+.loading {
+  background-image: linear-gradient(
+    90deg,
+    rgba(235, 235, 235, 0.2) 0,
+    rgba(235, 235, 235, 0.3) 40px,
+    rgba(235, 235, 235, 0.4) 80px
+  );
+  animation: loading 2s infinite ease-out;
+  filter: blur(0.5px);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 265px;
+  }
+}
+
+/* Cloud image */
+.cloud {
+  width: 180px;
+  height: 60px;
+  background: #85e280;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  position: relative;
+}
+.cloud::after,
+.cloud::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+.cloud::after {
+  width: 64.8px;
+  height: 64.8px;
+  top: -22px;
+  left: 25px;
+}
+.cloud::before {
+  width: 90px;
+  height: 90px;
+  top: -40px;
+  right: 25px;
+}
+
+/* blob shape*/
+.blob {
+  border-radius: 65% 81% 67% 55% / 73% 79% 94% 80%;
+}
+
+.honk {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 15, "SHLN" 50;
+}
+
+/* Auto fill config for Input */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+  -webkit-transition-delay: 9999s;
+}
+
+/* Change reveal button color for input type password */
+.auth::-ms-reveal {
+  filter: invert(100%);
+}
+
+.swiper .swiper-slide-thumb-active {
+  background-color: #f90102;
+  opacity: 1;
+}
+
+/* Remove input type number 2 button */
+input[type="number"].money::-webkit-inner-spin-button,
+input[type="number"].money::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Custome scrollbar */
+.customScroll::-webkit-scrollbar {
+  width: 10px;
+  height: 100%;
+}
+
+/* Track */
+.customScroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100vw;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+/* Handle */
+.customScroll::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 100vw;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+.customScroll::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/*  */
+.ellipsis {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+  display: -webkit-box;
+}
+
