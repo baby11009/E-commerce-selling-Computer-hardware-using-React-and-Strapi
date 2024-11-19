@@ -1,1 +1,3 @@
-![Alt text mô tả ảnh](./preview%20img/image-removebg-preview.png)
+<div align="center">
+  <p>Đây là nội dung được căn giữa</p>
+</div>
