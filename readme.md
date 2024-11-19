@@ -1,5 +1,17 @@
 <div align="center" style="font-size:40px, line-height:48px;font-weight:bold">
   <h1>
+  <b>Project information</b></h1>
+</div>
+
+<h2><b>Front-end</b></h2>
+React, Tailwindcss, axios, framer-motion, react query,...
+
+<h2><b>Back-end</b></h2>
+Strapi, sqlite, nodemailer, email-designer,...
+
+
+<div align="center" style="font-size:40px, line-height:48px;font-weight:bold">
+  <h1>
   <b>Project preview</b></h1>
 </div>
 
@@ -82,7 +94,40 @@ VITE_PAYPAL_REFUND_API=https://api-m.sandbox.paypal.com/v2/payments/captures (Pa
 ```
 
 Install package first then run with the following command
+
 ```bash
 npm install
 npm run dev
+```
+
+<h2><b>Back-end</b></h2>
+
+Create a .env file with the following configuration
+
+```
+HOST=0.0.0.0
+PORT=1337
+APP_KEYS=FP8rCp3DpYPzlpwW8+LrBA==,27+PAQZPoxXLDtDgVACeXg==,Y/Bykj1aWESrcWkP9FvvOg==,Ln5zCeZnNZ1CN23axfU2lQ==
+API_TOKEN_SALT=ji8qcEObh1k65nXXqmdksQ==
+ADMIN_JWT_SECRET=vtqWnUO8bqPzS54wSEvzYg==
+TRANSFER_TOKEN_SALT=klACPBwyhH1bSNjFfw39Nw==
+RESEND_API_KEY=re_D9rc2gXr_JorXYB1UQ7CBkLSiZ8T7ehpF
+# Database
+DATABASE_CLIENT=sqlite
+DATABASE_FILENAME=.tmp/data.db
+JWT_SECRET=XjpI/PBWNR4pAO8c0WlOIw==
+
+#Sending email using gmail SMTP server
+SMTP_HOST=smtp.gmail.com (gmail SMTP host)
+SMTP_PORT=465 (gmail SMTP port)
+SMTP_USERNAME= (your SMTP account username)
+SMTP_PASSWORD= (your SMTP account password)
+
+```
+
+Install package first then run with the following command
+
+```bash
+npm install
+npm run start
 ```
